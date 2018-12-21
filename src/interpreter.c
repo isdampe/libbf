@@ -10,9 +10,7 @@ int main(int argc, char **argv)
 		printf("Usage: bf [source.bf]\n");
 		return 1;
 	}
-	uint8_t data[100] = "++++++++++++++++++++++++++>+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++<[>.+<-]";
 
-	//struct bf_tokenset tokens = bf_tokenize(data, 100);
 	struct bf_tokenset tokens = bf_tokenset_from_src_file(argv[1]);
 	struct bf_vm_core core = bf_vm_init(&tokens, 30000);
 
